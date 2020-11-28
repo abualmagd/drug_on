@@ -1,20 +1,29 @@
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'screens/home_screen.dart';
+import 'package:drug_on/services/theme_provider.dart';
 
 void main() {
   runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Drug On',
-      theme: ThemeData.light(),
-      home: MyHomePage(),
+    return ChangeNotifierProvider(create: (_) => ThemeNotifier(),
+      child: Consumer<ThemeNotifier>(
+        builder: (context, ThemeNotifier notifier, child) {
+          return
+            MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: 'Drug On',
+              theme: notifier.darkTheme?dark:light,
+              home: MyHomePage(),
+            );
+        },
+      ),
     );
   }
+
 }
 
