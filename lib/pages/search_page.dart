@@ -1,5 +1,5 @@
 //import 'dart:html';
-import 'package:drug_on/pages/adding_in_defined_category.dart';
+import 'package:drug_on/pages/post_page.dart';
 
 import 'package:flutter/material.dart';
 
@@ -91,12 +91,12 @@ class _SearchPageState extends State<SearchPage> {
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         floatingActionButton: FloatingActionButton(
           child: Icon(
-            Icons.add,
+            Icons.edit,
             color: Colors.blue,
           ),
           onPressed: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DefinedPostPage()));
+                MaterialPageRoute(builder: (context) => PostPage()));
           },
           backgroundColor: Theme.of(context).primaryColor,
         ),
