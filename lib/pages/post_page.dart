@@ -48,7 +48,7 @@ class _PostPageState extends State<PostPage> {
                               child: Row(
                                 children: [
                                   CircleAvatar(
-                                    radius: 25,
+                                    radius: 24,
                                     backgroundImage: AssetImage('assets/images/profileHolder.jpeg'),
                                   ),
                                   Container(
